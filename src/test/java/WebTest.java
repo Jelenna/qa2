@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class WebTest {
 
     private final String DELFI_PAGE = "http://rus.delfi.lv/";
-    private final By NEWS_NAME = By.xpath(".//a[@class='top2012-title']");
+    private final By NEWS_NAME = By.xpath("//a[@class='top2012-title']");
 
 
     @Test

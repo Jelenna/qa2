@@ -1,4 +1,4 @@
- import org.junit.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,26 +16,23 @@ public class WebTestDelfi {
 
 
     @Test
-    public void pageTest2 () {
+    public void pageTest2() {
 
         System.setProperty("webdriver.gecko.driver", "C:/geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(DELFI_NEWS);
 
-        List<WebElement> mainArticle = new ArrayList<WebElement>();
-        mainArticle = driver.findElements(NEWS_TITLE);
+        List<WebElement> mainArticles = new ArrayList<WebElement>();
+        mainArticles = driver.findElements(NEWS_TITLE);
 
         boolean isArticleFound = false;
-        for (int i = 0; i < mainArticle.size(); i++) {
-            if (mainArticle.get(i).getText().equals(ARTICLE)) {
+        for (int i = 0; i < mainArticles.size(); i++) {
+            if (mainArticles.get(i).getText().equals(ARTICLE)) {
                 isArticleFound = true;
                 break;
             }
-
         }
         Assert.assertTrue("No NEWS here!", isArticleFound);
-       // driver.quit();
-
     }
 }
